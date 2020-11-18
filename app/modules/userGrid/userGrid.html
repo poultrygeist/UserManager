@@ -1,0 +1,36 @@
+<div class="row">
+    <div class="col-lg-12">
+        <input type="button" value="Reset Balances" class="btn btn-primary float-right" ng-click="resetBalances()" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-3">
+        <label for="search">Filter Names</label>
+    </div>
+    <div class="col-lg-9">
+        <input type="text" id="search" ng-change="filter()" class="form-control" ng-model="model.searchText">
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <table class="table">
+            <thead>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Registered Date</th>
+                <th>Email</th>
+                <th>Balance</th>
+            </thead>
+            <tbody>
+                <tr ng-repeat="x in model.records | orderBy: 'Name'">
+                    <td>{{x.Name}}</td>
+                    <td>{{x.Age}}</td>
+                    <td>{{x.RegisteredDate}}</td>
+                    <td>{{x.Email}}</td>
+                    <td>£{{x.Balance}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>
